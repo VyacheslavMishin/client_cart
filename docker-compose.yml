@@ -1,0 +1,15 @@
+services:
+  postgres:
+    image: postgres
+    container_name: client_cart_app_container
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: client_cart
+      POSTGRES_DB: client_cart
+    ports:
+      - "5432:5432"
+    volumes:
+      - ./postgres_data:/var/lib/postgresql/data
+
+volumes:
+  postgres_data:
